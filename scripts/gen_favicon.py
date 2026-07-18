@@ -1,17 +1,17 @@
 """Generate a multi-size favicon.ico for KimiK3 Max.
 
-Kimi-inspired design: blue gradient rounded tile + white chat bubble + blue "K3".
-Kept simple/legible at 16px while matching the SVG logo mark.
+Design: black gradient rounded tile + white "K" + small blue-green "3".
+Legible at 16px while matching the SVG logo mark.
 """
 import os
 from PIL import Image, ImageDraw, ImageFont
 
 OUT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public", "favicon.ico"))
 
-TOP = (79, 139, 255, 255)   # Kimi blue (gradient top)
-BOT = (30, 84, 224, 255)    # Kimi blue (gradient bottom)
+TOP = (43, 43, 48, 255)     # black gradient (top)
+BOT = (7, 7, 8, 255)        # black gradient (bottom)
 WHITE = (255, 255, 255, 255)
-INK = (46, 111, 230, 255)   # blue "K3"
+TEAL = (25, 200, 176, 255)  # blue-green "3" (#19C8B0)
 
 FONT_PATHS = [
     "C:/Windows/Fonts/arial.ttf",
@@ -53,27 +53,22 @@ def gradient_tile(size):
 def make(size):
     img = gradient_tile(size)
     d = ImageDraw.Draw(img)
-    # white chat bubble
-    bm = int(size * 0.16)
-    br = int(size * 0.18)
-    d.rounded_rectangle(
-        [bm, bm, size - bm, int(size * 0.78)], radius=br, fill=WHITE
-    )
-    # tail
-    tx = int(size * 0.47)
-    d.polygon(
-        [(tx, int(size * 0.78)), (int(size * 0.34), int(size * 0.92)), (int(size * 0.60), int(size * 0.78))],
-        fill=WHITE,
-    )
-    # blue K3
-    font = get_font(int(size * 0.42))
-    text = "K3"
-    bbox = d.textbbox((0, 0), text, font=font)
-    tw = bbox[2] - bbox[0]
-    th = bbox[3] - bbox[1]
-    x = (size - tw) / 2 - bbox[0]
-    y = (size * 0.50 - th / 2) - bbox[1]
-    d.text((x, y), text, font=font, fill=INK)
+    cy = size * 0.50
+    fK = get_font(int(size * 0.44))
+    f3 = get_font(int(size * 0.30))
+    kb = d.textbbox((0, 0), "K", font=fK)
+    kw = kb[2] - kb[0]
+    kh = kb[3] - kb[1]
+    t3b = d.textbbox((0, 0), "3", font=f3)
+    tw3 = t3b[2] - t3b[0]
+    gap = int(size * 0.04)
+    total = kw + gap + tw3
+    xK = (size - total) / 2 - kb[0]
+    yK = cy - kh / 2 - kb[1]
+    d.text((xK, yK), "K", font=fK, fill=WHITE)
+    x3 = xK + kw + gap - t3b[0]
+    y3 = yK - int(size * 0.12) - t3b[1]
+    d.text((x3, y3), "3", font=f3, fill=TEAL)
     return img
 
 
