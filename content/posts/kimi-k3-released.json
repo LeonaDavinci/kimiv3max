@@ -1,0 +1,9 @@
+{
+  "title": "Kimi K3 Released: Moonshot's 2.8T Open-Weight Model Is Live",
+  "slug": "kimi-k3-released",
+  "category": "News",
+  "excerpt": "Moonshot AI launched Kimi K3 on July 16, 2026 — a 2.8-trillion-parameter open-weight model with a 1M-token context. Here's what shipped and what's next.",
+  "contentHtml": "<h2>What shipped</h2><p>On July 16, 2026, Moonshot AI released <strong>Kimi K3</strong>, a Mixture-of-Experts model with a reported 2.8 trillion total parameters and a 1,000,000-token context window. It is available now through the Kimi app, Kimi Work, Kimi Code, and the Kimi API.</p><h2>Why it matters</h2><p>K3 is described as the world's first open model in the 3-trillion-parameter class. On the Artificial Analysis Intelligence Index it scores about 57, placing fourth among 189 models, and it ranks first on arena.ai's Code WebDev leaderboard.</p><h2>What's next</h2><p>Moonshot plans to publish the full model weights by July 27, 2026 under a Modified MIT licence. We'll track the release, licence, and self-hosting reality in our <a href=\"/open-weights\">open-weights guide</a>.</p><blockquote>Independent, non-affiliated coverage. Verify all figures against Moonshot's official channels.</blockquote>",
+  "date": "2026-07-17T09:00:00.000Z",
+  "updatedAt": "2026-07-17T09:00:00.000Z"
+}
