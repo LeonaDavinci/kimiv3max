@@ -151,11 +151,19 @@ export default function KimiK3Guide() {
             <Link href="/guides/how-to-use-kimi-k3">How-To Guides</Link> — practical
             walkthroughs.
           </li>
-          <li>
-            <Link href="/open-weights">Open Weights</Link> — weights, licence, and
-            self-hosting.
-          </li>
-        </ul>
+            <li>
+              <Link href="/open-weights">Open Weights</Link> — weights, licence, and
+              self-hosting.
+            </li>
+            <li>
+              <Link href="/faq">FAQ</Link> — answers to the most-asked Kimi K3
+              questions.
+            </li>
+            <li>
+              <Link href="/playground">Playground</Link> — try Kimi K3 in your
+              browser right now.
+            </li>
+          </ul>
 
         <div className="disclaimer">{site.disclaimer}</div>
       </div>

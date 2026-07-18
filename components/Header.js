@@ -15,6 +15,8 @@ export default function Header() {
           <Link href="/kimi-k3/benchmarks">Benchmarks</Link>
           <Link href="/kimi-k3/pricing">Pricing</Link>
           <Link href="/news">News</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/playground">Playground</Link>
           <Link href="/tools/token-cost-calculator" className="cta">
             Token Calculator
           </Link>

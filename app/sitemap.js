@@ -12,6 +12,8 @@ export default function sitemap() {
     "/guides/how-to-use-kimi-k3",
     "/open-weights",
     "/news",
+    "/faq",
+    "/playground",
     "/tools/token-cost-calculator",
     "/about",
     "/editorial-policy",
