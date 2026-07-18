@@ -1,4 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KimiK3 Max logo">
-  <rect width="64" height="64" rx="14" fill="#4285F4"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="-1">K3</text>
+  <defs>
+    <linearGradient id="kimiblue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4F8BFF"/>
+      <stop offset="1" stop-color="#1E54E0"/>
+    </linearGradient>
+  </defs>
+  <!-- rounded tile (Kimi-style blue) -->
+  <rect width="64" height="64" rx="16" fill="url(#kimiblue)"/>
+  <!-- white chat bubble (AI assistant motif) -->
+  <path d="M19 11 H45 Q54 11 54 20 V32 Q54 41 45 41 H30 L20 52 L19 41 Q10 41 10 32 V20 Q10 11 19 11 Z" fill="#ffffff"/>
+  <!-- blue K -->
+  <g fill="none" stroke="#2E6FE6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 17 L22 40"/>
+    <path d="M22 28 L41 17"/>
+    <path d="M22 28 L41 40"/>
+  </g>
+  <!-- blue 3 (superscript, marks K3) -->
+  <g fill="none" stroke="#2E6FE6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M47 15 C51 15 51 20 46 20.5"/>
+    <path d="M46 20.5 C51 21 51 26 46 26"/>
+  </g>
 </svg>
