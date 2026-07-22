@@ -9,11 +9,12 @@ import { useState } from "react";
 export default function KimiFrame({
   src = "https://kimi.ai",
   label = "Kimi K3 on kimi.ai",
+  full = false,
 }) {
   const [status, setStatus] = useState("loading");
 
   return (
-    <div className="kimi-frame-wrap">
+    <div className={`kimi-frame-wrap${full ? " full" : ""}`}>
       <div className="kimi-frame-bar">
         <span className="kimi-frame-status">
           {status === "loading" ? "Loading Kimi K3…" : "Embedded Kimi K3"}

@@ -1,7 +1,7 @@
 import site from "@/lib/site";
 import { getAllPosts } from "@/lib/posts";
 
-export default function sitemap() {
+export default async function sitemap() {
   const staticRoutes = [
     "",
     "/kimi-k3-guide",
@@ -27,7 +27,7 @@ export default function sitemap() {
     priority: route === "" ? 1 : 0.8,
   }));
 
-  const postEntries = getAllPosts().map((post) => ({
+  const postEntries = (await getAllPosts()).map((post) => ({
     url: `${site.url}/news/${post.slug}`,
     lastmod: (post.updatedAt || post.date).split("T")[0],
     changeFreq: "weekly",

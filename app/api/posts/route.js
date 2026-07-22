@@ -1,10 +1,7 @@
-import fs from "fs";
-import path from "path";
+import { savePost } from "@/lib/posts";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const postsDir = path.join(process.cwd(), "content", "posts");
 
 export async function POST(request) {
   try {
@@ -18,13 +15,15 @@ export async function POST(request) {
       );
     }
 
-    if (!fs.existsSync(postsDir)) fs.mkdirSync(postsDir, { recursive: true });
-
     const safeSlug = slug
       .toLowerCase()
       .trim()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "");
+
+    if (!safeSlug) {
+      return Response.json({ error: "slug is invalid" }, { status: 400 });
+    }
 
     const post = {
       title,
@@ -36,11 +35,7 @@ export async function POST(request) {
       updatedAt: new Date().toISOString(),
     };
 
-    fs.writeFileSync(
-      path.join(postsDir, `${safeSlug}.json`),
-      JSON.stringify(post, null, 2),
-      "utf8"
-    );
+    await savePost(post);
 
     return Response.json({ ok: true, slug: safeSlug });
   } catch (err) {

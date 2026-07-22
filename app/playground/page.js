@@ -42,7 +42,7 @@ export default function PlaygroundPage() {
           images, video, coding, and deep research.
         </p>
 
-        <KimiFrame src="https://kimi.ai" label="Kimi K3" />
+        <KimiFrame src="https://kimi.ai" label="Kimi K3" full />
 
         <div className="grid cards" style={{ marginTop: 28 }}>
           <div className="card">

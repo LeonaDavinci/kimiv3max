@@ -8,13 +8,13 @@ import site from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   // Pre-render any posts present at build; dynamic rendering covers new ones.
-  return getAllSlugs().map((slug) => ({ slug }));
+  return (await getAllSlugs()).map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }) {
+  const post = await getPostBySlug(params.slug);
   if (!post) return { title: "Article not found" };
   return {
     title: post.title,
@@ -31,8 +31,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function PostPage({ params }) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }) {
+  const post = await getPostBySlug(params.slug);
   if (!post) notFound();
 
   const clean = DOMPurify.sanitize(post.contentHtml || "");

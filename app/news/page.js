@@ -18,8 +18,8 @@ export const metadata = {
   },
 };
 
-export default function NewsPage() {
-  const posts = getAllPosts();
+export default async function NewsPage() {
+  const posts = await getAllPosts();
   return (
     <div className="page">
       <div className="container">

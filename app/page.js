@@ -15,8 +15,8 @@ const pillars = [
   { href: "/open-weights", title: "Open Weights", desc: "Weights release, license, and self-hosting reality." },
 ];
 
-export default function Home() {
-  const latest = getLatestPosts(6);
+export default async function Home() {
+  const latest = await getLatestPosts(6);
 
   return (
     <>
