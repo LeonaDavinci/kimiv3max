@@ -61,6 +61,8 @@ img, svg { max-width: 100%; }
 }
 .btn:hover { background: var(--blue-dark); text-decoration: none; }
 .btn.secondary { background: #fff; color: var(--blue-dark); border: 1px solid var(--border); }
+.btn.dark { background: #121214; color: #fff; }
+.btn.dark:hover { background: #000; text-decoration: none; }
 
 /* Sections */
 .section { padding: 48px 0; }

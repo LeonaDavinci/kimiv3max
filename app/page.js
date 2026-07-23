@@ -29,6 +29,9 @@ export default async function Home() {
             updated as the story develops.
           </p>
           <p>
+            <Link href="/playground" className="btn dark">
+              TRY KIMI K3 MAX NOW
+            </Link>{" "}
             <Link href="/kimi-k3-guide" className="btn">
               Read the Kimi K3 guide
             </Link>{" "}
