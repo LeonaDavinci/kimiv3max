@@ -2,16 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import DOMPurify from "isomorphic-dompurify";
 import JsonLd from "@/components/JsonLd";
-import { getPostBySlug, getAllSlugs } from "@/lib/posts";
+import { getPostBySlug } from "@/lib/posts";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import site from "@/lib/site";
 
 export const dynamic = "force-dynamic";
-
-export async function generateStaticParams() {
-  // Pre-render any posts present at build; dynamic rendering covers new ones.
-  return (await getAllSlugs()).map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({ params }) {
   const post = await getPostBySlug(params.slug);
